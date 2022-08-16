@@ -16,6 +16,8 @@ while data:
 
 	data = f.readline()
 
+f.close()
+
 min = True
 totalRisk = 0
 
@@ -46,6 +48,4 @@ for i in range(0, len(arr)):
 		if (min == True):
 			totalRisk += num + 1
 
-print("Result =", totalRisk)
-
-f.close()
+print("\nResult =", totalRisk)

@@ -1,4 +1,4 @@
-f = open(r"C:\Users\ahmet\OneDrive\Masaüstü\Software\Python\AdventOfCode\inputs_3.txt", "r")
+f = open("inputs_3.txt", "r")
 
 myLine = f.readline()
 myLine = myLine.strip("\n")
@@ -38,7 +38,6 @@ tempOnes = _ones
 tempZeros = _zeros
 
 while(_ones + _zeros > 1):
-	print("ONES AND ZEROS :" , _ones, _zeros)
 	if (_ones >= _zeros):
 		moreOnes = True
 	else:
@@ -88,7 +87,6 @@ _zeros = tempZeros
 _ones = tempOnes
 
 while(_ones + _zeros > 1):
-	print("ONES AND ZEROS :" , _ones, _zeros)
 	if (_ones >= _zeros):
 		moreOnes = True
 	else:
@@ -129,9 +127,7 @@ for j in reversed(range(0,lenBits)):
 		co2Result += 2**_power
 	_power += 1
 
-print(oxyList)
-print(co2List)
 print(oxyResult)
 print(co2Result)
-print(oxyResult * co2Result)
+print("Result =", oxyResult * co2Result)
 	

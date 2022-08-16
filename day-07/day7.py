@@ -2,8 +2,10 @@ _inputs = "inputs_7.txt"
 _test = "T_inputs_7.txt"
 
 f = open(_inputs, "r")
-data = f.readline
 data = f.read(-1)
+
+f.close()
+
 data = data.split(",")
 
 for i in range(0, len(data)):
@@ -28,4 +30,4 @@ for i in range(0, len(data)):
 	if total < min:
 		min = total
 
-print (min)
+print ("\nResult =", min)

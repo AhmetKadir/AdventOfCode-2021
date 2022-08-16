@@ -1,32 +1,35 @@
 zeros = []
 ones = []
+lenBits = 0
 
-f = open(r"C:\Users\ahmet\OneDrive\Masaüstü\Software\Python\AdventOfCode\inputs_3.txt", "r")
+f = open("inputs_3.txt", "r")
 myLine = f.readline()
-for bit in myLine:
-		if(bit == "0"):
-			zeros.append(1)
-			ones.append(0)
-		elif(bit == "1"):
-			zeros.append(0)
-			ones.append(1)
-
-lenBits = len(myLine)			
 
 while myLine:
 
+	if((lenBits) == 0):
+		lenBits = len(myLine)	
+	
 	index = 0
+
 	for bit in myLine:
 		if(bit == "0"):
-			zeros[index] += 1
+			if(len(zeros) <= index):
+				zeros.append(1)
+				ones.append(0)
+			else:
+				zeros[index] += 1
 		elif(bit == "1"):
-			ones[index] += 1
+			if(len(ones) <= index):
+				ones.append(1)
+				zeros.append(0)
+			else:
+				ones[index] += 1
 		index += 1
 
 	myLine = f.readline()
 
 f.close()
-
 
 gama = []
 epsilon = []
@@ -57,5 +60,5 @@ for j in range( 0, len(gama)):
 print(dec_gama)
 print(dec_epsilon)
 
-print(dec_epsilon * dec_gama)
+print("Result =", dec_epsilon * dec_gama)
 

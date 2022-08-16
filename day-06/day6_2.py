@@ -1,9 +1,12 @@
 _inputs = "inputs_6.txt"
 _test = "T_inputs_6.txt"
 
+########################################
 
 f = open(_inputs, "r")
 data = f.read(-1)
+f.close()
+
 data = data.split(",")
 
 count = [0] * 9
@@ -29,7 +32,6 @@ for day in range(0, days):
 
 total = 0
 for i in count:
-	print(i)
 	total += i
 
-print("Answer is=", total)
+print("\nAnswer is =", total)

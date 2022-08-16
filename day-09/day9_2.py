@@ -47,6 +47,7 @@ while data:
 	index += 1
 
 	data = f.readline()
+f.close()
 
 for i in range(0, len(arr)):
 	for j in range(0, len(arr[i])):
@@ -54,11 +55,9 @@ for i in range(0, len(arr)):
 		if(alreadyVisited[i][j]):
 			continue
 		findSize(i, j, arr)
-		# print(arr[i][j], end = "")
 		sizes.sort()
 		if (sizeCount > sizes[0]):
 			sizes[0] = sizeCount
-	# print("\n")
 
 
 result = 1		
@@ -67,6 +66,5 @@ for x in sizes:
 	print(x)
 	result *= x
 
-print("Result = ", result)
+print("\nResult = ", result)
 
-f.close()

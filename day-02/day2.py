@@ -1,7 +1,7 @@
 horizontal = 0
 depth = 0
 
-f = open(r"C:\Users\ahmet\OneDrive\Masaüstü\Software\Python\AdventOfCode\inputs_2.txt", "r")
+f = open("inputs_2.txt", "r")
 myLine = f.readline()
 myLine = myLine.split(" ")
 
@@ -17,11 +17,12 @@ while(myLine):
 		break
 
 	myLine = f.readline()
+	myLine = myLine.strip("\n")
 	myLine = myLine.split(" ")
-	print(myLine)
+	
 	if(len(myLine) != 2):
 		break
 
 f.close()
 
-print(horizontal * depth)
+print("Result = ", horizontal * depth)

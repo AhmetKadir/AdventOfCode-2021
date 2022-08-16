@@ -1,5 +1,3 @@
-import os
-
 _inputs = "inputs_8.txt"
 _test= "T_inputs_8.txt"
 
@@ -21,16 +19,14 @@ data = f.readline()
 
 while data:
 	data = data.split("|")
-	#first = data[0].split(" ")
 	second = data[1].split(" ");
 	for signal in second:
 		signal = signal.strip("\n")
 		if(decode(signal)):
 			count += 1
-			#print(signal)
 
 	data = f.readline()
 	
 f.close()
 
-print(count)
+print("\nResult =",count)

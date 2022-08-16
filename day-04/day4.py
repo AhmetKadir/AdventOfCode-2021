@@ -13,11 +13,8 @@ def isFinished(b):
 	_counter = 0
 	for j in range(0, len(b)):
 		for i in range(0, len(b[j])):
-			# print("i,j =", i,j)
-			# print("b[i][j] =", b[i][j])
 			if(b[i][j] == True):
 				_counter += 1
-				# print("Counter =", _counter)
 			else:
 				_counter = 0
 				break
@@ -59,7 +56,6 @@ while myLine:
 				try:
 					num = int(myLine[j])
 					boards[index][i].append(num)
-					tryAgain = False
 				except:
 					1
 

@@ -43,17 +43,10 @@ def mark(x1, y1, x2, y2):
 			j += 1
 			
 
-
-
 f = open(_file, "r")
 data = f.readline()
 
 coordinates = [[0] * N for i in range(N)] 	# N*N List
-
-# for i in range(0, len(coordinates)):
-# 	for y in range(0, len(coordinates[i])):
-# 		print(coordinates[i][y], end = " ")
-# 	print()
 
 while(data):
 	data = data.split("->")
@@ -69,11 +62,6 @@ while(data):
 	data = f.readline()
 
 f.close()
-print()
-# for i in range(0, len(coordinates)):
-# 	for j in range(0, len(coordinates[i])):
-# 		print(coordinates[i][j], end = " ")
-# 	print()
 
 counter = 0
 for i in coordinates:
@@ -81,4 +69,4 @@ for i in coordinates:
 		if val > 1:
 			counter += 1
 print()
-print(counter)
+print("Result =", counter)

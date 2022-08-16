@@ -5,16 +5,12 @@ def isFinished(b):
 	for i in range(0, len(b)):
 		_counter = 0
 		for j in range(0, len(b[i])):
-			# print(i,j)
-			# print(b[i][j])
 			if (b[i][j] == False):
 				break
 			else:
 				_counter += 1
-				# print("i,j", i, j)
-				# print("counter =", _counter)
+
 		if (_counter == 5):
-			# print("----------------------FINISHED------------------")
 
 			return True
 			
@@ -22,16 +18,12 @@ def isFinished(b):
 	_counter = 0
 	for j in range(0, len(b)):
 		for i in range(0, len(b[j])):
-			# print("i,j =", i,j)
-			# print("b[i][j] =", b[i][j])
 			if(b[i][j] == True):
 				_counter += 1
-				# print("Counter =", _counter)
 			else:
 				_counter = 0
 				break
 		if (_counter == 5):
-			# print("----------------------FINISHED------------------")
 			return True
 	return False
 
@@ -48,14 +40,11 @@ def oneLastBoard(markedBoards, boards):
 	for i in range(0, len(boards)):
 		global finishedCounter
 		if(finishedBoards[i] == False):
-			# print(i, ". board ------------------------>")
 			if(isFinished(markedBoards[i]) == True):
 				finishedCounter += 1
 				finishedBoards[i] = True
 	
 	if (finishedCounter == (len(boards))):
-		# print("Finished boards:\n", finishedBoards)
-		# print("Finished counter:", finishedCounter)
 		return True
 	else:
 		return False
@@ -139,10 +128,7 @@ for num in numbers:
 			for k in range(0, len(boards[i][j])) :
 				if(boards[i][j][k] == num):
 					markedBoards[i][j][k] = True
-					# for a in markedBoards:
-					# 	for b in a:
-					# 		print("->", b)
-					# 	print("\n")
+
 					if(oneLastBoard(markedBoards, boards) == True):
 						isOver = True
 						markedWinnerBoard = markedBoards[i]
@@ -157,30 +143,6 @@ for num in numbers:
 		break
 
 _sum = sumOfUnmarkeds(markedWinnerBoard, winnerBoard)
-
-# count = 0
-# for a in boards:
-# 	for b in a:
-# 		print("->", b)
-# 	print(count)
-# 	count += 1
-
-print("marked Winner board is:\n", markedWinnerBoard)
-print("Winner board is:\n", winnerBoard)
-
-
-# for a in markedBoards:
-# 	for b in a:
-# 		print("->", b)
-# 	print("\n")
-
-# for i in range(0, len(boards)):
-# 	if(finishedBoards[i] == False):
-# 		for j in range(0, len(boards[i])):
-# 			for k in range(0, len(boards[i][j])):
-# 				print(markedBoards[i][j][k])
-# 			print("----")
-			
 
 
 print(_sum)

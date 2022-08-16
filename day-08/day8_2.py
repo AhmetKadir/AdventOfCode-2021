@@ -9,21 +9,9 @@ arr = [42, 17, 34, 39, 30, 37, 41, 25, 49, 45]
 def decode(sign, _countOccurence):
 	total = 0
 	for i in range(0, len(sign)):
-		if(sign[i] == "a"):
-			myNum = _countOccurence[0]
-		elif(sign[i] == "b"):
-			myNum = _countOccurence[1]
-		elif(sign[i] == "c"):
-			myNum = _countOccurence[2]
-		elif(sign[i] == "d"):
-			myNum = _countOccurence[3]
-		elif(sign[i] == "e"):
-			myNum = _countOccurence[4]
-		elif(sign[i] == "f"):
-			myNum = _countOccurence[5]
-		elif(sign[i] == "g"):
-			myNum = _countOccurence[6]
-			
+		ind = ord(sign[i]) - ord('a')
+		myNum = _countOccurence[ind]
+	
 		total += myNum
 	
 	return findTheNum(total)
@@ -48,27 +36,13 @@ while data:
 	first = data[0].split(" ")
 	second = data[1].split(" ");
 
-	#print(second)
 	for signal in first:
 		if(len(signal) > 1):
 			for i in  range(0, len(signal)):
-				if(signal[i] == "a"):
-					countOccurence[0] += 1
-				elif(signal[i] == "b"):
-					countOccurence[1] += 1
-				elif(signal[i] == "c"):
-					countOccurence[2] += 1
-				elif(signal[i] == "d"):
-					countOccurence[3] += 1
-				elif(signal[i] == "e"):
-					countOccurence[4] += 1
-				elif(signal[i] == "f"):
-					countOccurence[5] += 1
-				elif(signal[i] == "g"):
-					countOccurence[6] += 1
+				num = ord(signal[i]) - ord('a')
+				countOccurence[num]+=1
 
 	for signal in second:
-		#print(signal)
 		if(len(signal) > 1):
 			signal = signal.strip("\n")
 			temp = str(decode(signal, countOccurence))
@@ -80,4 +54,4 @@ while data:
 	
 f.close()
 
-print(result)
+print("\nResult =", result)

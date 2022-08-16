@@ -1,4 +1,4 @@
-f = open(r"C:\Users\ahmet\OneDrive\Masaüstü\Software\Python\AdventOfCode\inputs.txt", "r")
+f = open("inputs.txt", "r")
 counter = 0
 myLine = f.readline()
 myLine = int(myLine.strip('\n'))
@@ -15,9 +15,8 @@ while myLine:
 	temp = myLine
 
 	myLine = f.readline()
-	print(myLine)
 
 f.close()
 
-print(counter)
+print("Result:", counter)
 	

@@ -16,7 +16,6 @@ for i in range(0, 80):
 		else:
 			data[j] -= 1
 
-# for i in data:
-# 	print (i, ",", end = " ")
+f.close()
 
-print("Answer is:", len(data))
+print("\nAnswer is =", len(data))
