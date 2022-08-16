@@ -1,0 +1,61 @@
+zeros = []
+ones = []
+
+f = open(r"C:\Users\ahmet\OneDrive\Masaüstü\Software\Python\AdventOfCode\inputs_3.txt", "r")
+myLine = f.readline()
+for bit in myLine:
+		if(bit == "0"):
+			zeros.append(1)
+			ones.append(0)
+		elif(bit == "1"):
+			zeros.append(0)
+			ones.append(1)
+
+lenBits = len(myLine)			
+
+while myLine:
+
+	index = 0
+	for bit in myLine:
+		if(bit == "0"):
+			zeros[index] += 1
+		elif(bit == "1"):
+			ones[index] += 1
+		index += 1
+
+	myLine = f.readline()
+
+f.close()
+
+
+gama = []
+epsilon = []
+
+for i in range(0, lenBits - 1):
+	if zeros[i] > ones[i]:
+		gama.append(0)
+		epsilon.append(1)
+	else:
+		gama.append(1)
+		epsilon.append(0)
+
+dec_gama = 0
+dec_epsilon = 0
+
+print(gama)
+print(epsilon)
+
+bin_index = len(gama) - 1
+for j in range( 0, len(gama)):
+	if(gama[bin_index] == 1):
+		dec_gama += 2**j
+	if(epsilon[bin_index] == 1):
+		dec_epsilon += 2**j
+
+	bin_index -= 1
+
+print(dec_gama)
+print(dec_epsilon)
+
+print(dec_epsilon * dec_gama)
+
