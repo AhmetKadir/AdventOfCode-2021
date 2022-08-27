@@ -1,7 +1,6 @@
 _inputs = "input11.txt"
 _test= "T_inputs_11.txt"
 
-
 def increase(x, y):
 	if(flashed[x][y]):
 		return
@@ -12,7 +11,6 @@ def increase(x, y):
 	elif(arr[x][y] == 9):
 		arr[x][y] = 0
 		flashed[x][y] = True
-
 		global flashCount
 		flashCount += 1
 
@@ -22,17 +20,14 @@ def increase(x, y):
 				increase(x-1, y-1)
 			if(y+1 < len(arr)):
 				increase(x-1, y+1)
-			
 		if(x+1 < len(arr)):
 			increase(x+1, y)
 			if(y-1 >= 0):
 				increase(x+1, y-1)
 			if(y+1 < len(arr)):
 				increase(x+1, y+1)
-
 		if(y-1 >= 0):
 			increase(x, y-1)
-		
 		if(y+1 < len(arr)):
 			increase(x, y+1)
 
@@ -46,7 +41,6 @@ def allFlashed():
 		for b in a:
 			if (not b):
 				return False
-
 	return True
 
 ind = 0
@@ -64,11 +58,6 @@ while data:
 	ind += 1
 
 f.close()
-
-# for i in arr:
-# 	for j in i:
-# 		print(j, end =" + ")
-# 	print()
 
 steps = 0
 flashCount = 0
