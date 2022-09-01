@@ -49,7 +49,6 @@ def findPaths(theCave, visitSmalls, str):
 	
 
 caves = []
-bigCave = False
 nextIndex = 0
 
 with open(_inputs, "r") as f:
